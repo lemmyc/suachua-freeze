@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./data/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./data/css/lienhe.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="./data/script/script.js" defer></script>
+    <script src="./data/script/formValidator.js" defer></script>
+    <title>Frozen Yogurt</title>
+</head>
+<body>
+    <header>
+        <a href="./trangchu.html">
+            <img src="./data/images/logo.png" alt="Freeze Logo" id="logo">
+        </a>
+        <img src="./data/images/header-img1.png" class="header-img-1" alt="">
+        <img src="./data/images/header-img2.png" class="header-img-2" alt="">
+        <img src="./data/images/header-img3.png" class="header-img-3" alt="">
+        <nav>
+            <a href="./trangchu.html">Trang chủ</a>
+            <a href="./gioithieu.html">Giới thiệu</a>
+            <a href="./sanpham.html">Sản phẩm</a>
+            <a href="./tintuc.html">Tin tức</a>
+            <a href="./dangnhap.html">Đăng nhập</a>
+            <a href="./dangky.html">Đăng ký</a>
+            <a href="./lienhe.html">Liên hệ</a>
+            <div class="header-search">
+                <form action="/timkiem.html" method="GET" class="header-search-form" style="display: inline-block;">
+                    <input  name="search" type="text" class="header-search-input">
+                    <button class="header-btn" id="hd-search-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+                <button class="header-btn" id="hd-cart-btn">
+                    <i class="fa-solid fa-shopping-cart cart-icon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>LIÊN HỆ</h1>
+        <div>
+            <div class="gps">
+                <img src="./data/images/lienhe/check-in.png" alt="" class="gps-img">
+            </div>
+            <span class="address">Địa chỉ: 209 Đường 30 Tháng 4, Xuân Khánh, Ninh Kiều, Cần Thơ - TOÀ NHÀ VINPEARL CẦN THƠ</span>
+            <p class="address-ntc">
+                (Nếu bạn có góp ý, vui lòng liên hệ bằng thư điện tử hoặc sử dụng biểu mẫu dưới.)
+                <br/>
+            </p>
+            <p style="float: right; margin-right: 64px; font-style: italic;">
+                Xin cảm ơn.
+            </p>
+        </div>
+        <h1>Góp ý</h1>
+        <div>
+            <form action="" method="POST" id="form" enctype="application/x-www-form-urlencoded">
+                <table class="table-form">
+                    <tbody class="user-form">
+                        <tr>
+                            <td class="input-label">
+                                <label for="name_input">
+                                    <i class="fa-solid fa-user-astronaut"></i>
+                                </label>
+                            </td>
+                            <td class="form-input">
+                                <input type="name" name="name" id="name_input" placeholder="Vui lòng nhập Họ tên cảu bạn">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="input-label">
+                                <label for="email_input">
+                                    <i class="fa-regular fa-envelope"></i>
+                                </label>
+                            </td>
+                            <td class="form-input">
+                                <input type="email" name="email" id="email_input" placeholder="Vui lòng nhập địa chỉ Email">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="input-label">
+                                <label for="chude">
+                                    <i class="fa-solid fa-list"></i>
+                                </label>
+                            </td>
+                            <td class="form-input">
+                                <select name="chude" id="chude" size="1">
+                                    <option value="dichvu">Về Sản Phẩm/ Dịch Vụ</option>
+                                    <option value="uudai">Về Ưu Đãi Thành Viên</option>
+                                    <option value="tuyendung">Về Tin Tuyển Dụng</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="input-label input-label--text">
+                                <label for="">
+                                  <i class="fa-solid fa-note-sticky"></i>  
+                                </label>
+                            </td>
+                            <td class="form-input">
+                                <textarea name="noidung" id="noidung" class="user-cmt" cols="50" rows="7"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="submit-input" style="text-align: center;">
+                                <input type="submit" class="submit-btn btn" value="Gửi">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </d>
+    </main>
+    <footer>
+        <p>© 2021 Bản quyền thuộc về FreezeVN. 
+            <a href="">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="">
+                <i class="fab fa-pinterest"></i>
+            </a>
+            <a href="/lienhe.html" class="btt-logo"></a>
+        </p>
+    </footer>
+</body>
+</html>

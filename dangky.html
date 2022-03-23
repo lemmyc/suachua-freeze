@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./data/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./data/css/dangky.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="./data/script/script.js" defer></script>
+    <script src="./data/script/formValidator.js" defer></script>
+    <title>Frozen Yogurt</title>
+</head>
+<body>
+    <header>
+        <a href="./trangchu.html">
+            <img src="./data/images/logo.png" alt="Freeze Logo" id="logo">
+        </a>
+        <img src="./data/images/header-img1.png" class="header-img-1" alt="">
+        <img src="./data/images/header-img2.png" class="header-img-2" alt="">
+        <img src="./data/images/header-img3.png" class="header-img-3" alt="">
+        <nav>
+            <a href="./trangchu.html">Trang chủ</a>
+            <a href="./gioithieu.html">Giới thiệu</a>
+            <a href="./sanpham.html">Sản phẩm</a>
+            <a href="./tintuc.html">Tin tức</a>
+            <a href="./dangnhap.html">Đăng nhập</a>
+            <a href="./dangky.html">Đăng ký</a>
+            <a href="./lienhe.html">Liên hệ</a>
+            <div class="header-search">
+                <form action="/timkiem.html" method="GET" class="header-search-form" style="display: inline-block;">
+                    <input  name="search" type="text" class="header-search-input">
+                    <button class="header-btn" id="hd-search-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+                <button class="header-btn" id="hd-cart-btn">
+                    <i class="fa-solid fa-shopping-cart cart-icon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>ĐĂNG KÝ</h1>
+            <form action="" class="reg-form" id="form" method="POST">
+                <table>
+                    <tbody class="form">
+                        <tr class="form-control">
+                            <td class="form-label">
+                                <label for="email_input">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </label>
+                            </td>
+                            <td class="form-input">
+                                <input type="email" name="email" id="email_input" required placeholder="Vui lòng nhập email">
+                            </td>
+                        </tr>
+                        <tr class="form-control">
+                            <td class="form-label">
+                                <label for="pass_input">
+                                    <i class="fa-solid fa-key"></i>
+                                </label>
+                            </td>
+                            <td class="form-input">
+                                <input type="password" id="pass_input" name="pw" required placeholder="Vui lòng nhập mật khẩu">
+                            </td>
+                        </tr>
+                        <tr class="form-control">
+                            <td class="form-label">
+                                <label for="repass_input">
+                                    <i class="fa-solid fa-key"></i>
+                                </label>
+                            </td>
+                            <td class="form-input">
+                                <input type="password" id="repass_input" name="pw2" required placeholder="Vui lòng nhập lại mật khẩu">
+                            </td>
+                        </tr>
+                        <tr class="form-control">
+                            <td class="form-label">
+                                <label for="">
+                                    <i class="fa-solid fa-user-group"></i>
+                                </label>
+                            </td>
+                            <td class="form-input--select">
+                                <div>
+                                    <input id="silver_input" name="memberType" type="radio" value="silver"  checked>
+                                    <label for="silver_input">
+                                        <b>Bạc</b>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input id="gold_input" name="memberType" type="radio" value="gold">
+                                    <label for="gold_input">
+                                        <b>Vàng</b>
+                                    </label>
+
+                                </div>
+                                <div>
+                                    <input id="platinum_input" name="memberType" type="radio" value="platinum">
+                                    <label for="platinum_input">
+                                        <b>Bạch kim</b>
+                                    </label>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="form-control">
+                            <td class="form-label">
+                                <i class="fa-solid fa-user-astronaut"></i>
+                            </td>
+                            <td class="form-input--file">
+                                <input type="file">
+                            </td>
+                        </tr>
+                        <tr class="term-of-services">
+                            <td colspan="2">
+                                <span>
+                                    Thông qua việc tạo tài khoản, bạn đồng ý với
+                                        <a href=""> <i>Điều khoản & Quyền riêng tư của chúng tôi.</i> </a>
+                                    
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="Đăng ký" class="submit-btn btn">
+                                <input type="reset" value="Huỷ" class="reset-btn btn">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>© 2021 Bản quyền thuộc về FreezeVN. 
+            <a href="">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="">
+                <i class="fab fa-pinterest"></i>
+            </a>
+            <a href="/dangky.html" class="btt-logo"></a>
+        </p>
+    </footer>
+</body>
+</html>
