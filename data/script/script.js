@@ -15,5 +15,5 @@ function sendData(item){
     if(item.length > 0 ) searchForm.submit();
 }
 function openOrderPage(){
-    window.open('./donhang.html',)
+    window.location.href='donhang.html'
 }

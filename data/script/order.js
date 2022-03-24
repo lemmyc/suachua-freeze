@@ -1,5 +1,3 @@
-// function showFullOrd(){
-// }
 var itemList={
     "sp001":{   
         "name":"Sữa Chua Vị Kiwi",
@@ -48,7 +46,7 @@ var itemList={
     }
 };
 const ordTableBody = document.querySelector('.ord-table tbody');
-const ordTableFooter = document.querySelector('.ord-table tfoot')
+const ordTableFooter = document.querySelector('.ord-table tfoot');
 let totalPreTax = 0;
 var htmls, html = [];
 var index = 0; // index trong mảng html (thứ tự mặt hàng trong đơn hàng)
@@ -81,6 +79,7 @@ for(var key in localStorage){
 htmls = html.join('')
 ordTableBody.innerHTML = htmls;
 ordTableFooter.innerHTML = getOrdFooter();
+toggleTable();
 function handleRemove(removeIndex, removeKey){
     totalPreTax -= itemList[removeKey].price*parseInt(localStorage.getItem(removeKey));
     localStorage.removeItem(removeKey);
@@ -91,10 +90,11 @@ function handleRemove(removeIndex, removeKey){
     // nên ta gán tạm thời tại phần tử đó là một chuỗi rỗng
     // khi join lại và render ra giao diện, html cũng sẽ bỏ qua
     // khi reload lại trang, mọi thứ sẽ được cập nhật lại
-    html[index] = ` `
+    html[index] = ` `;
     htmls = html.join('');
     ordTableBody.innerHTML = htmls;
     ordTableFooter.innerHTML = getOrdFooter();
+    toggleTable();
 }
 function getOrdFooter(){
     let discountRate = getDiscountRate();
@@ -124,11 +124,11 @@ function getOrdFooter(){
         </tr>
         <tr>
             <td class="confirmation" colspan="6">
-                <button id="confirm-btn">Xác nhận đơn hàng</button>
+                <button id="confirm-btn" onclick="handleConfirmClick()">Xác nhận đơn hàng</button>
+                <button id="print-btn" onclick="handlePrintClick()"><i class="fa-solid fa-print"></i> In bản báo giá</button>
             </td>
         </tr>
     `
-    // console.log(htmls)
     return htmls;
 }
 function convToVND(number){
@@ -143,6 +143,38 @@ function getDiscountRate(){
     )
         return 0.1;
     return 0;
+}
+function handleConfirmClick(){
+    for(var key in localStorage){
+        if(localStorage.hasOwnProperty(key)){
+            window.localStorage.removeItem(key)
+        }
+    }
+    alert('Đơn hàng của bạn đã được chúng tôi tiếp nhận')
+    window.close()
+}
+function handlePrintClick(){
+    window.print()
+}
+function toggleTable(){
+    if(localStorage.length === 0){
+        // document.querySelector('.ord-table').style.display = 'none';
+        document.querySelector('.ord-table').style.border = 'none';
+        document.querySelector('.ord-table').innerHTML = `
+            <div
+              style="margin: 16px; text-align:center; font-weight: bold; font-size: 24px; color: #f90b6e">
+                <p
+                    style="margin-bottom: 16px"
+                >
+                    Giỏ hàng chưa có sản phẩm
+                </p>
+                <a
+                    style="text-decoration:none; font-size: 20px; padding: 4px 8px; border: 1px solid black; color: #f90b6e"
+                    href="./sanpham.html" rel=”noopener”> Mua sắm ngay !!!
+                </a>
+            </div>
+        `
+    }
 }
 window.onstorage = ()=>{
     location.reload();
