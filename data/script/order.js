@@ -97,7 +97,8 @@ function handleRemove(removeIndex, removeKey){
     ordTableFooter.innerHTML = getOrdFooter();
 }
 function getOrdFooter(){
-    let discount = 0.1*totalPreTax;
+    let discountRate = getDiscountRate();
+    let discount = discountRate*totalPreTax;
     let tax = 0.1*(totalPreTax - discount);
     let total = totalPreTax - discount + tax;
     htmls = `
@@ -108,7 +109,7 @@ function getOrdFooter(){
         </tr>
         <tr>
             <td class="discount" colspan="6">
-                Chiết khấu (B) = 0.1 x A = ${convToVND(discount)}
+                Chiết khấu (B) = ${discountRate*100}% x A = ${convToVND(discount)}
             </td>
         </tr>   
         <tr>
@@ -121,12 +122,27 @@ function getOrdFooter(){
                 Tổng đơn hàng = A - B + C = ${convToVND(total)}
             </td>
         </tr>
+        <tr>
+            <td class="confirmation" colspan="6">
+                <button id="confirm-btn">Xác nhận đơn hàng</button>
+            </td>
+        </tr>
     `
     // console.log(htmls)
     return htmls;
 }
 function convToVND(number){
     return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(number)
+}
+function getDiscountRate(){
+    var currentTime = new Date();
+    var weekDay = currentTime.getDay(); //Sun (0) - > Sat (6)
+    var totalMins = currentTime.getHours()*60 + currentTime.getMinutes();
+    if( ((weekDay >= 1) && (weekDay <= 3)) 
+        && ((totalMins >= 420) && (totalMins <= 1020))
+    )
+        return 0.1;
+    return 0;
 }
 window.onstorage = ()=>{
     location.reload();
