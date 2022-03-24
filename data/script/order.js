@@ -150,8 +150,8 @@ function handleConfirmClick(){
             window.localStorage.removeItem(key)
         }
     }
-    alert('Đơn hàng của bạn đã được chúng tôi tiếp nhận')
-    window.close()
+    alert('Đơn hàng của bạn đã được chúng tôi tiếp nhận.\r\nXin cảm ơn vì đã ủng hộ Sữa chua Freeze !!!');
+    location.reload();
 }
 function handlePrintClick(){
     window.print()
